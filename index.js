@@ -1,5 +1,6 @@
 var fsp = require('fs').promises;
 var path = require('path');
+var getCrc32 = require('crc32');
 
 var axios = require('axios');
 
@@ -19,8 +20,7 @@ async function uploadFileToController (filename) {
     const data = await fsp.readFile(path.join(filesDir, filename), {encoding: 'utf8'});
     const name = `0:/gcodes/${filename}`;
     const time = (new Date()).toISOString();
-    // const crc32 = `7f0d5568`;
-    const crc32 = `7f0d5568`;
+    const crc32 = getCrc32(data);
     const params = {
         name,
         time,

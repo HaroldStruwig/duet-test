@@ -18,6 +18,7 @@
   "homepage": "https://github.com/HaroldStruwig/duet-test#readme",
   "dependencies": {
     "axios": "^0.21.1",
+    "crc32": "^0.2.2",
     "lodash": "^4.17.21"
   }
 }
